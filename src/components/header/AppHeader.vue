@@ -3,8 +3,8 @@
         <div class="leftIcon">
             <a><router-link to="/">The Lopper</router-link></a>
         </div>
-        <a class="rightButton">PLAY</a>
         <a class="rightButton">STOP</a>
+        <a class="rightButton">PLAY</a>
         </div>
 </template>
 
