@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div v-for="pad in padsType" :key="pad" style="display: inline-block; width: 30%">
-            <app-pad :soundPath="pad.path" :soundTitle="pad.title"></app-pad>
+        <div v-for="pad in padsType" :key="pad.value" style="display: inline-block; width: 30%">
+            <app-pad :soundPath="pad.pathTitle" :soundTitle="pad.title"></app-pad>
         </div>
     </div>
 </template>
@@ -15,15 +15,15 @@ export default {
     data(){
         return{
             padsType: [
-                {path:'../../assets/sounds/SilentStar.mp3', title:"SilentStar"},
-                {path:'../../assets/sounds/BassWarwickheavyfunk.mp3', title:"BassWarwickheavyfunk"},
-                {path:"../../assets/sounds/electriGuitarCoutry.mp3", title:"electriGuitarCoutry"},
-                {path:"../../assets/sounds/future_funk_beats.mp3", title:"future_funk_beats"},
-                {path:"../../assets/sounds/GrooveBTanggu.mp3", title:"GrooveBTanggu"},
-                {path:"../../assets/sounds/MazePoliticsPerc.mp3", title:"MazePoliticsPerc"},
-                {path:"../../assets/sounds/PAS3GROOV.mp3", title:"PAS3GROOV"},
-                {path:"../../assets/sounds/StompySlosh.mp3", title:"StompySlosh"},
-                {path:"../../assets/sounds/stutter_breakbeats.mp3", title:"stutter_breakbeats"}
+                {pathTitle:"SilentStar", title:"SilentStar"},
+                {pathTitle:"BassWarwickheavyfunk", title:"BassWarwickheavyfunk"},
+                {pathTitle:"electriGuitarCoutry", title:"electriGuitarCoutry"},
+                {pathTitle:"future_funk_beats", title:"future_funk_beats"},
+                {pathTitle:"GrooveBTanggu", title:"GrooveBTanggu"},
+                {pathTitle:"MazePoliticsPerc", title:"MazePoliticsPerc"},
+                {pathTitle:"PAS3GROOV", title:"PAS3GROOV"},
+                {pathTitle:"StompySlosh", title:"StompySlosh"},
+                {pathTitle:"stutter_breakbeats", title:"stutter_breakbeats"}
                 ]
         }
     }

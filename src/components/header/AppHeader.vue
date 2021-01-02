@@ -3,13 +3,30 @@
         <div class="leftIcon">
             <a><router-link to="/">The Lopper</router-link></a>
         </div>
-        <a class="rightButton">STOP</a>
-        <a class="rightButton">PLAY</a>
+        <a class="rightButton"  
+        @click="changeStateStop"
+        v-if="this.$store.getters.getLooperState">
+        STOP
+        </a>
+
+        <a class="rightButton" 
+        @click="changeStateOn"
+        v-if="!(this.$store.getters.getLooperState)">
+        PLAY
+        </a>
         </div>
 </template>
 
 <script>
 export default {
+    methods:{
+        changeStateStop(){
+            this.$store.dispatch('activateLopper', false)
+        },
+        changeStateOn(){
+            this.$store.dispatch('activateLopper', true)
+        }
+    }
     
 }
 </script>

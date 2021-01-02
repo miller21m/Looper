@@ -4,13 +4,24 @@
             <div class="padTitle">{{soundTitle}}</div>
 
             <div>
-                <div class="button" style="background: green;" @click="playAudio">Play</div>
-                <div class="button" style="background: red;"  @click="stopAudio">Stop</div>
+                <div class="button"
+                style="background: green;"
+                @click="playAudio(); activeOn()"
+                v-if="!on">
+                ON
+                </div>
+
+                <div class="button"
+                style="background: red;"
+                @click="stopAudio(); activeOff()"
+                v-if="on">
+                OFF
+                </div>
             </div>
 
-            <audio id="audio-player">
+            <audio :id="soundPath">
                 <!-- <source :src="require(`../../assets/sounds/${soundTitle}.mp3`)" type="audio/mpeg"> -->
-                <source :src="require(`../../assets/sounds/${soundTitle}.mp3`)" type="audio/mpeg">
+                <source :src="require('../../assets/sounds/'+ soundPath + '.mp3')" type="audio/mpeg">
             </audio>
         </div>
     </div>
@@ -21,36 +32,53 @@ export default {
     props:['soundPath', 'soundTitle'],
     data(){
         return{
-            isPlaying: false
+            isPlaying: false,
+            on: false,
+            looperState: this.$store.getters.getLooperState
         }
     },
     methods:{
+        activeOn(){//Change the state of the sound -> ON 
+            this.on=true
+            console.log('Im on ' +  this.on);
+            //Check if the global state of the looper is true(active) and if the sound is ON then play the sound
+            if(this.on && this.$store.getters.getLooperState){ 
+                var audio = document.getElementById(this.soundTitle)
+                audio.play()  
+            } 
+        },
+        activeOff(){
+            //Change the state of the sound false -> stop playing the selected sound 
+            this.on = false 
+            console.log('Im off ' + this.on);
+        },
         playAudio(){
             console.log('Playing');
-            var audio = document.getElementById("audio-player")
-            this.isPlaying = true
-            audio.play()   
+            var audio = document.getElementById(this.soundTitle)
             
-            
+            //Chck if the the selected sound is ON and the looper is ON then play the selected sounds
+            if(this.on && this.$store.getters.getLooperState){
+                audio.play()  
+            } 
         },
         stopAudio(){
             console.log('Stop');
-            var audio = document.getElementById("audio-player")
+            var audio = document.getElementById(this.soundTitle)
+            // this.on= false
             audio.pause()
-            this.isPlaying= false
+            
         }
     },
     watch:{
-        isPlaying(){
-            if(this.isPlaying){
-                this.playAudio();
-            }
-            else{
-                this.stopAudio();
+        //Watching if the looper is PLAY-> true or STOP -> flase 
+        '$store.state.looperState'(value){
+            //If the looper is actived the user press (PLAY) then call playAudio Function
+            if(value){
+                this.playAudio()
+            }else{//If the looper is turndOff the user press (STOP) then call stopAudio Function
+                this.stopAudio()
             }
         }
-    },
-    computed:{
     }
 }
 </script>
