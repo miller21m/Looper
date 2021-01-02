@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-for="pad in padsType" :key="pad.value" style="display: inline-block; width: 30%">
-            <app-pad :soundPath="pad.pathTitle" :soundTitle="pad.title"></app-pad>
+            <app-pad :soundPath="pad.pathTitle" :soundTitle="pad.title" :soundimg="pad.imgSrc"></app-pad>
         </div>
     </div>
 </template>
@@ -15,15 +15,15 @@ export default {
     data(){
         return{
             padsType: [
-                {pathTitle:"SilentStar", title:"SilentStar"},
-                {pathTitle:"BassWarwickheavyfunk", title:"BassWarwickheavyfunk"},
-                {pathTitle:"electriGuitarCoutry", title:"electriGuitarCoutry"},
-                {pathTitle:"future_funk_beats", title:"future_funk_beats"},
-                {pathTitle:"GrooveBTanggu", title:"GrooveBTanggu"},
-                {pathTitle:"MazePoliticsPerc", title:"MazePoliticsPerc"},
-                {pathTitle:"PAS3GROOV", title:"PAS3GROOV"},
-                {pathTitle:"StompySlosh", title:"StompySlosh"},
-                {pathTitle:"stutter_breakbeats", title:"stutter_breakbeats"}
+                {pathTitle:"SilentStar", title:"SILENT STAR", imgSrc: 'silentStar'},
+                {pathTitle:"BassWarwickheavyfunk", title:"BASS WAR WICK HEAVY FUNK" , imgSrc: 'bassGuitar'},
+                {pathTitle:"electriGuitarCoutry", title:"ELECTRIC GUITAR COUNTRY" , imgSrc: 'electricGuitar'},
+                {pathTitle:"future_funk_beats", title:"FUTURE FUNK BEATS" , imgSrc: 'futureFunk'},
+                {pathTitle:"GrooveBTanggu", title:"GROOVE B TANGGU" , imgSrc: 'bTanggu'},
+                {pathTitle:"MazePoliticsPerc", title:"MAZE POLITICS PERC" , imgSrc: 'maze'},
+                {pathTitle:"PAS3GROOV", title:"PAS 3 GROOV" , imgSrc: 'groov'},
+                {pathTitle:"StompySlosh", title:"STOMPY SLOSH" , imgSrc: 'slosh'},
+                {pathTitle:"stutter_breakbeats", title:"STUTTER BREAKBEATS" , imgSrc: 'beats'}
                 ]
         }
     }
@@ -32,5 +32,6 @@ export default {
 
 
 <style scoped>
+
 
 </style>

@@ -32,20 +32,22 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 .topnav{
     position: absolute;
     width: 100%;
     height: 60px;
-    background: blue;
+    background: rgba(0, 0, 0, 0.377);
     font-weight: bold;
     top: 0px;
     left: 0px;
+    font-family: 'Poppins';
 }
 .leftIcon a {
   float: left;
   color: #f2f2f2;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 5px;
   margin-left: 20px;
   text-decoration: none;
   font-size: 22px;
@@ -60,14 +62,14 @@ export default {
     border: 1px solid white;
     -moz-border-radius: 35px;
     border-radius: 35px; 
-    padding: 10px 12px;
+    padding: 6px 22px;
     font-size: 16px;
     margin-top: 10px;
     margin-right: 10px;
 }
 
 .rightButton:hover{
-    background: white;
+    background: greenyellow;
     color: black;
 }
 

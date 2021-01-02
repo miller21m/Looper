@@ -16,12 +16,12 @@ export default {
 
 <style scoped>
 .dashbordContent{
-    height: 900px;
-    border: 1px solid black;
-    margin: 100px 30px 0px 30px;
+    height: 1200px;
+    /* border: 1px solid black; */
 }
 
 .padsStyle{
-    border: 1px solid red;
+    padding-top: 200px;
+    margin-left: 100px;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mainScreen">
     <app-header></app-header>
     <router-view/>
   </div>
@@ -15,5 +15,9 @@ export default {
 </script>
 
 <style scoped>
+.mainScreen{
+  background: url('~@/assets/backgroubnd/waveBackground.svg');
+}
+
 
 </style>
