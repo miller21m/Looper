@@ -1,18 +1,18 @@
 <template>
     <div>
-        <div class="singlePad">
+        <div :class="{singlePad: true, beat: on}">
             <div class="padTitle">{{soundTitle}}</div>
-            <img :src="require('../../assets/soundIcons/' + soundimg + '.png')" alt="">
+            <img class="soundImg" :src="require('../../assets/soundIcons/' + soundimg + '.png')" alt="">
             <div>
                 <div class="button"
-                style="background: green;"
+                style="background: #38b000;"
                 @click="playAudio(); activeOn()"
                 v-if="!on">
                 ON
                 </div>
 
                 <div class="button"
-                style="background: red;"
+                style="background: #d90429;"
                 @click="stopAudio(); activeOff()"
                 v-if="on">
                 OFF
@@ -103,11 +103,12 @@ export default {
 .singlePad{
     text-align: center;
     margin:0px 100px 30px 100px;
-    background: turquoise;
+    background: linear-gradient(to right, red, purple);
     height: 150px;
     width: 70%;
     display: inline-block;
-    border: 1px solid black;
+    border: 1px solid white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -moz-border-radius: 15px;
     border-radius: 15px; 
     font-family: 'Poppins';
@@ -121,9 +122,86 @@ export default {
     margin: 20px 2px 0px 2px;
     display: inline-block;
     width: 35%;
-    border: 1px solid black;
+    border: 1px solid white;
     -moz-border-radius: 35px;
     border-radius: 35px; 
     padding: 2px 5px 2px 5px;
+}
+
+.button:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.beat {
+	box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+	/* transform: scale(1); */
+	animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		/* transform: scale(0.95); */
+		box-shadow: 0 0 0 0 rgba(2, 158, 36, 0.486);
+	}
+
+	70% {
+		/* transform: scale(0.97); */
+		box-shadow: 0 0 0 10px rgba(2, 158, 36, 0.486);
+	}
+
+	100% {
+		/* transform: scale(0.95); */
+		box-shadow: 0 0 0 0 rgba(2, 158, 36, 0.486);
+	}
+}
+
+@media screen and (max-width: 1264px){
+    .padTitle{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1140px){
+    .singlePad{
+        margin:0px 50px 30px 100px;
+    }
+
+      .padTitle{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .singlePad{
+        margin: 0px 0px 30px 50px;
+    }
+
+     .padTitle{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .singlePad{
+    margin: 0px 0px 30px 75px;
+}
+}
+
+@media screen and (max-width: 576px){
+    .singlePad{
+        margin: 0px 0px 30px 15px;
+        width: 95%;
+    }
+
+    .padTitle{
+        font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .singlePad{
+        margin: 0px 0px 30px 5px;
+    }
 }
 </style>

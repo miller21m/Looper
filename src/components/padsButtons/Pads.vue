@@ -1,6 +1,8 @@
 <template>
     <div>
-        <div v-for="pad in padsType" :key="pad.value" style="display: inline-block; width: 30%">
+        <div v-for="pad in padsType" 
+        :key="pad.value" 
+        class="padsContainer">
             <app-pad :soundPath="pad.pathTitle" :soundTitle="pad.title" :soundimg="pad.imgSrc"></app-pad>
         </div>
     </div>
@@ -16,8 +18,8 @@ export default {
         return{
             padsType: [
                 {pathTitle:"SilentStar", title:"SILENT STAR", imgSrc: 'silentStar'},
-                {pathTitle:"BassWarwickheavyfunk", title:"BASS WAR WICK HEAVY FUNK" , imgSrc: 'bassGuitar'},
-                {pathTitle:"electriGuitarCoutry", title:"ELECTRIC GUITAR COUNTRY" , imgSrc: 'electricGuitar'},
+                {pathTitle:"Bassheavyfunk", title:"BASS HEAVY FUNK" , imgSrc: 'bassGuitar'},
+                {pathTitle:"electriGuitar", title:"ELECTRIC GUITAR" , imgSrc: 'electricGuitar'},
                 {pathTitle:"future_funk_beats", title:"FUTURE FUNK BEATS" , imgSrc: 'futureFunk'},
                 {pathTitle:"GrooveBTanggu", title:"GROOVE B TANGGU" , imgSrc: 'bTanggu'},
                 {pathTitle:"MazePoliticsPerc", title:"MAZE POLITICS PERC" , imgSrc: 'maze'},
@@ -32,6 +34,37 @@ export default {
 
 
 <style scoped>
+.padsContainer{
+    display: inline-block; 
+    width: 30%;
+}
 
+@media screen and (max-width: 1264px){
+}
+
+@media screen and (max-width: 1140px){
+}
+
+@media screen and (max-width: 960px){
+    .padsContainer{
+        width: 33%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .padsContainer{
+        width: 48%;
+    }
+}
+
+@media screen and (max-width: 576px){
+    
+}
+
+@media screen and (max-width: 320px){
+    .padsContainer{
+        display: inline;
+    }
+}
 
 </style>

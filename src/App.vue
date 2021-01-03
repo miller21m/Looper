@@ -18,6 +18,4 @@ export default {
 .mainScreen{
   background: url('~@/assets/backgroubnd/waveBackground.svg');
 }
-
-
 </style>

@@ -34,10 +34,11 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 .topnav{
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 60px;
     background: rgba(0, 0, 0, 0.377);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     font-weight: bold;
     top: 0px;
     left: 0px;
@@ -69,7 +70,7 @@ export default {
 }
 
 .rightButton:hover{
-    background: greenyellow;
+    background: #38b000;
     color: black;
 }
 
