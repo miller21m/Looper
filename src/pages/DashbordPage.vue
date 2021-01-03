@@ -8,7 +8,7 @@
 import Pads from '../components/padsButtons/Pads.vue'
 export default {
     components:{
-        appPads: Pads
+        appPads: Pads //A component that displays/include all the 9 pads
     }
     
 }
@@ -17,7 +17,6 @@ export default {
 <style scoped>
 .dashbordContent{
     height: 1000px;
-    /* border: 1px solid black; */
 }
 
 .padsStyle{

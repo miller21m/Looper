@@ -1,8 +1,10 @@
 <template>
     <div class="topnav">
         <div class="leftIcon">
-            <a><router-link to="/">The Lopper</router-link></a>
+            <a><router-link to="/">The Looper</router-link></a>
         </div>
+
+        <!-- Using the 'getLooperState' from store change the button display, and active changeStateStop -->
         <a class="rightButton"  
         @click="changeStateStop"
         v-if="this.$store.getters.getLooperState">
@@ -20,9 +22,11 @@
 <script>
 export default {
     methods:{
+        //Stop the looper by  dispatch activateLopper and send false
         changeStateStop(){
             this.$store.dispatch('activateLopper', false)
         },
+        //Play the looper by  dispatch activateLopper and send true
         changeStateOn(){
             this.$store.dispatch('activateLopper', true)
         }

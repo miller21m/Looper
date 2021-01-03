@@ -1,8 +1,11 @@
 <template>
     <div>
-        <div v-for="pad in padsType" 
+        <!-- Loop through all the padsType and select single pad each time -->
+        <div 
+        v-for="pad in padsType" 
         :key="pad.value" 
         class="padsContainer">
+        <!-- Passing soundPath soundTitle and soundImgTitle using props to the child component -->
             <app-pad :soundPath="pad.pathTitle" :soundTitle="pad.title" :soundimg="pad.imgSrc"></app-pad>
         </div>
     </div>
@@ -12,10 +15,11 @@
 import Pad from './Pad.vue'
 export default {
     components:{
-        appPad: Pad
+        appPad: Pad//A component that displays/include single pad
     },
     data(){
         return{
+            //Store all the sounds/images/titles in array of objects
             padsType: [
                 {pathTitle:"SilentStar", title:"SILENT STAR", imgSrc: 'silentStar'},
                 {pathTitle:"Bassheavyfunk", title:"BASS HEAVY FUNK" , imgSrc: 'bassGuitar'},

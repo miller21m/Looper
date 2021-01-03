@@ -1,3 +1,4 @@
+//Adding routes in case that we will add more routes in the future
 import Vue from 'vue';
 import VueRouter from 'vue-router'
 

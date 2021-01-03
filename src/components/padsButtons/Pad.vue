@@ -2,7 +2,9 @@
     <div>
         <div :class="{singlePad: true, beat: on}">
             <div class="padTitle">{{soundTitle}}</div>
+
             <img class="soundImg" :src="require('../../assets/soundIcons/' + soundimg + '.png')" alt="">
+
             <div>
                 <div class="button"
                 style="background: #38b000;"
@@ -28,6 +30,7 @@
 
 <script>
 export default {
+    //Get props soundPath/ soundTitle/ soundimg 
     props:['soundPath', 'soundTitle', 'soundimg'],
     data(){
         return{
@@ -36,33 +39,34 @@ export default {
     },
     methods:{
         activeOn(){
-            //Change the state of the sound -> ON 
+            //Change the state of the selected sound -> ON 
             this.on=true
-            console.log('Im on ' +  this.on);
+
             //Check if the global state of the looper is true(active) and if the sound is ON then play the sound
             if(this.on && this.$store.getters.getLooperState){ 
                 var audio = document.getElementById(this.soundPath)
 
                 //Call dispatch 'insertSound' in order to push the new selected sound to the active sounds array
                 this.$store.dispatch('insertSound', audio)
-                console.log(this.$store.state.activeSounds[0].currentTime);
 
                 //Getting the active sound in the first index of the array in order to sync the new activated sound
                 audio.currentTime=this.$store.state.activeSounds[0].currentTime
+
                 audio.play()
             } 
         },
         activeOff(){
-            //Change the state of the sound false -> stop playing the selected sound 
+            //Change the state of the selected sound -> OFF -> stop playing the selected sound 
             this.on = false 
-            console.log('Im off ' + this.on);
         },
+
+        //playAudio() stopAudio() called by the watch state property based on the looper state
         playAudio(){
-            console.log('Playing');
             var audio = document.getElementById(this.soundPath)
 
             //Chck if the the selected sound is ON and the looper is ON then play the selected sounds
             if(this.on && this.$store.getters.getLooperState){
+
                 //Call dispatch 'insertSound' in order to push the new selected sound to the active sounds array
                 this.$store.dispatch('insertSound', audio)
 
@@ -72,11 +76,10 @@ export default {
             } 
         },
         stopAudio(){
-            console.log('Stop');
             var audio = document.getElementById(this.soundPath)
 
             //Call dispatch 'removeSound' in order to remove the selected sound
-            // we want to turn off from the active sounds array
+            // we want to turn off (remove) from the active sounds array
             this.$store.dispatch('removeSound', audio)
             audio.pause()
             
