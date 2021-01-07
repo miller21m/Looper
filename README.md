@@ -1,5 +1,14 @@
 # thelooper
 
+website: https://m-the-looper.herokuapp.com/
+
+Frameworks and Libraries:
+Vue.js
+Vuex
+Axios
+Vue Router
+deploy - Heroku
+
 ## Project setup
 ```
 npm install
