@@ -2,12 +2,16 @@
 
 website: https://m-the-looper.herokuapp.com/
 
-Frameworks and Libraries:
-Vue.js
-Vuex
-Axios
-Vue Router
-deploy - Heroku
+<h3>Frameworks and Libraries:</h3>
+<div>
+  <ul>
+    <li>Vue.js</li>
+    <li>Vuex</li>
+    <li>Axios</li>
+    <li>Vue Router</li>
+    <li>Deploy - heroku</li>
+  </ul>
+</div>
 
 ## Project setup
 ```
