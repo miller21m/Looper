@@ -1,14 +1,17 @@
 <template>
     <div class="dashbordContent"> 
+        <app-recorder class="recorderStyle"></app-recorder>
         <app-pads class="padsStyle"></app-pads>
     </div>
 </template>
 
 <script>
 import Pads from '../components/padsButtons/Pads.vue'
+import Recorder from '../components/recorder/Recorder.vue'
 export default {
     components:{
-        appPads: Pads //A component that displays/include all the 9 pads
+        appPads: Pads, //A component that displays/include all the 9 pads
+        appRecorder: Recorder//Conmponent for the record buttons (Record On / Record Off/ play)
     }
     
 }
@@ -19,8 +22,16 @@ export default {
     height: 1000px;
 }
 
+.recorderStyle{
+    display: flex;
+    padding-top:120px ;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
 .padsStyle{
-    padding-top: 200px;
+    padding-top: 50px;
     margin-left: 100px;
 }
 
@@ -43,6 +54,10 @@ export default {
 @media screen and (max-width: 768px){
     .padsStyle{
     padding-top: 80px;
+    }
+
+    .dashbordContent{
+    height: 1300px;
     }
 }
 

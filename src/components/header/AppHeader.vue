@@ -17,10 +17,15 @@
         PLAY
         </a>
         </div>
+
 </template>
 
 <script>
 export default {
+    data(){
+        return{
+        }
+    },
     methods:{
         //Stop the looper by  dispatch activateLopper and send false
         changeStateStop(){
@@ -31,7 +36,6 @@ export default {
             this.$store.dispatch('activateLopper', true)
         }
     }
-    
 }
 </script>
 
